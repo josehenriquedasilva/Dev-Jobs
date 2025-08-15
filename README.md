@@ -36,26 +36,3 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 
-model User {
-  id  String  @id @default(uuid())
-  email String @unique
-  password String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("users")
-}
-
-model Vaga {
-  id String @id @default(uuid())
-  titulo String
-  empresa String
-  localizacao String
-  stacks String
-  descricao String
-  salario String? //opcional
-  tipo String? // opcional
-  dataPublicacao DateTime @default(now())
-
-  @@map("vagas")
-}
