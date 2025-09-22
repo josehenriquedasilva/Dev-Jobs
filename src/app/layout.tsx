@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/componentes/header/page";
+import Footer from "@/componentes/footer/page";
 
 export const metadata: Metadata = {
   title: "DevJobs",
@@ -16,7 +18,9 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -6,10 +6,50 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String   @id @default(uuid())
+  email      String   @unique
+  password   String
+  createdeAt DateTime @default(now())
+  updateAt   DateTime @updatedAt
+  Vagas      Vaga[]
+
+  @@map("users")
+}
+
+enum ModalidadeDeAtuacao {
+  PRESENCIAL
+  REMOTO
+  HIBRIDO
+}
+
+enum TipoDeContrato {
+  PJ
+  CLT
+}
+
+model Vaga {
+  id             String                @id @default(uuid())
+  titulo         String
+  atuacao        ModalidadeDeAtuacao
+  empresa        String
+  localizacao    String
+  tipoDeContrato TipoDeContrato
+  salario        Int?
+  stacks         String
+  descricao      String
+  responsabilidades     String
+  dataPublicacao DateTime              @default(now())
+
+  userId         String
+  user           User                  @relation(fields: [userId], references: [id])
+
+  @@map("vagas")
 }
