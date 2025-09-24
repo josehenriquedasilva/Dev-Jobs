@@ -57,7 +57,7 @@ export default function Login() {
           <span className="mt-2 text-center text-sm text-red-500">{erro}</span>
         </div>
         <form onSubmit={login} className="mt-8 space-y-6">
-          <div className="rounded-md -space-y-px">
+          <div className="flex flex-col gap-3 rounded-md">
             <div>
               <label htmlFor="idEmail" className="sr-only">
                 Email
@@ -69,10 +69,10 @@ export default function Login() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               />
             </div>
-            <div className="mb-5">
+            <div>
               <label htmlFor="idPassword"></label>
               <input
                 type="password"
@@ -81,7 +81,7 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Senha"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               />
             </div>
             <div>
